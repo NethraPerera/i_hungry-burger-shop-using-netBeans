@@ -4,8 +4,6 @@
  */
 package i_hungry;
 
-public static Customers[]=new Customers[0];
-public static Orders[]=new Orders[0];
 /**
  *
  * @author W3 Computers
