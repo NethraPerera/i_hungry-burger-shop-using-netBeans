@@ -43,6 +43,11 @@ public class MainInterFace extends javax.swing.JFrame {
         btnAddCustomers.setBackground(new java.awt.Color(255, 102, 0));
         btnAddCustomers.setForeground(new java.awt.Color(255, 255, 255));
         btnAddCustomers.setText("Add Customers");
+        btnAddCustomers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCustomersActionPerformed(evt);
+            }
+        });
 
         btnPlaceOrder.setText("Place Order");
 
@@ -115,6 +120,10 @@ public class MainInterFace extends javax.swing.JFrame {
     private void btnUpdateOrderDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateOrderDetailsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateOrderDetailsActionPerformed
+
+    private void btnAddCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomersActionPerformed
+        new AddCustomer().setVisible(true);
+    }//GEN-LAST:event_btnAddCustomersActionPerformed
 
     /**
      * @param args the command line arguments

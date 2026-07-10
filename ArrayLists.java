@@ -2,6 +2,8 @@ public class ArrayLists {
     public static Customers [] customerList=new Customers[0];
     public static Orders [] orderList=new Orders[0];
 
+    public static int currentCustomerID=0;
+    public static int currentOrderID=0;
     ArrayLists(){}
     public void addLastCustomer(Customers customer){
         extendCustomerList();
