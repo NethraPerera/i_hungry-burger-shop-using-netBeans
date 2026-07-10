@@ -14,6 +14,7 @@ public class Customers {
     private int totalQTY;
     private double totalPrice;
 
+    Customers(){}
     Customers(String customerId,String customerName,int totalQTY,double totalPrice){
         setCustomerId(customerId);
         setCustomerName(customerName);
@@ -38,7 +39,7 @@ public class Customers {
         return this.customerId;
     }
     public String getCustomerName(){
-        return this.customerNAME;
+        return this.customerName;
     }
     public String getTotalQTY(){
         return this.totalQTY;
