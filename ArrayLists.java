@@ -1,16 +1,19 @@
+package i_hungry;
 public class ArrayLists {
     public static Customers [] customerList=new Customers[0];
     public static Orders [] orderList=new Orders[0];
 
     public static int currentCustomerID=0;
     public static int currentOrderID=0;
+
+    
     ArrayLists(){}
     public void addLastCustomer(Customers customer){
         extendCustomerList();
         customerList[customerList.length-1]=customer;
     }
     public void extendCustomerList(){
-        Customers []tempCustomerList=new Customers[customerList.length+1]
+        Customers []tempCustomerList=new Customers[customerList.length+1];
         for (int i = 0; i < customerList.length; i++) {
             tempCustomerList[i]=customerList[i];
         }

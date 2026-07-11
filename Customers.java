@@ -29,7 +29,7 @@ public class Customers {
         this.customerName=customerName;
     }
     
-    public void setCustomerQTY(int totalQTY){
+    public void setTotalQTY(int totalQTY){
         this.totalQTY=totalQTY;
     }
     public void setTotalPrice(double totalPrice){
@@ -41,10 +41,10 @@ public class Customers {
     public String getCustomerName(){
         return this.customerName;
     }
-    public String getTotalQTY(){
+    public int getTotalQTY(){
         return this.totalQTY;
     }
-    public String getTotalPrice(){
+    public double getTotalPrice(){
         return this.totalPrice;
     }
 }

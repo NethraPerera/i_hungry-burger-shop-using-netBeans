@@ -1,3 +1,4 @@
+package i_hungry;
 class Orders {
     private String orderId;
     private int QTY;
@@ -32,13 +33,13 @@ class Orders {
     public String getOrderId() {
         return this.orderId;
     }
-    public String getQTY() {
+    public int getQTY() {
         return this.QTY;
     }
     public String getStatus() {
         return this.status;
     }
-    public String getNetTotal() {
+    public double getNetTotal() {
         return this.netTotal;
     }
 }
