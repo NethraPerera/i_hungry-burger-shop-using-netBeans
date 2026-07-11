@@ -82,7 +82,6 @@ public class AddCustomer extends javax.swing.JFrame {
         );
 
         lblCustomerId2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
         // ------------------ get CustomerId    -----------------------
         ArrayLists.currentCustomerID += 1;
         newCustomerId= String.format("C%03d", ArrayLists.currentCustomerID);
@@ -93,7 +92,6 @@ public class AddCustomer extends javax.swing.JFrame {
         txtCustomerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCustomerNameActionPerformed(evt);
-                
             }
         });
 
@@ -126,6 +124,11 @@ public class AddCustomer extends javax.swing.JFrame {
         });
 
         btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -196,7 +199,14 @@ public class AddCustomer extends javax.swing.JFrame {
         System.out.println(ArrayLists.customerList[0].getCustomerId());
         System.out.println(ArrayLists.customerList[0].getCustomerName());
 
+        dispose();
+
     }//GEN-LAST:event_btnAddCustomerActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+       i_hungry.ArrayLists.currentCustomerID-=1;
+        dispose();
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
