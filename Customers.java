@@ -15,6 +15,10 @@ public class Customers {
     private double totalPrice;
 
     Customers(){}
+    Customers(String customerId,String customerName){
+        setCustomerId(customerId);
+        setCustomerName(customerName);
+    }
     Customers(String customerId,String customerName,int totalQTY,double totalPrice){
         setCustomerId(customerId);
         setCustomerName(customerName);

@@ -7,6 +7,7 @@ package i_hungry;
 import java.util.ArrayList;
 
 import i_hungry.ArrayLists;
+import i_hungry.Customers;
 
 /**
  *
@@ -16,13 +17,15 @@ public class AddCustomer extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddCustomer.class.getName());
 
-    /**
-     * Creates new form AddCustomer
-     */
+    // ------------------ create new name and id references ----------------------
+
+    String newName;
+    String newCustomerId;
+
     public AddCustomer() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,13 +85,15 @@ public class AddCustomer extends javax.swing.JFrame {
 
         // ------------------ get CustomerId    -----------------------
         ArrayLists.currentCustomerID += 1;
-        String id= String.format("C%03d", ArrayLists.currentCustomerID);
-        lblCustomerId2.setText(id);
+        newCustomerId= String.format("C%03d", ArrayLists.currentCustomerID);
+        
+        lblCustomerId2.setText(newCustomerId);
 
         txtCustomerName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCustomerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCustomerNameActionPerformed(evt);
+                
             }
         });
 
@@ -178,11 +183,19 @@ public class AddCustomer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCustomerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerNameActionPerformed
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCustomerNameActionPerformed
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
-        btnAddCustomerActionPerformed
+        newName=txtCustomerName.getText();
+        Customers newCustomer=new Customers(newCustomerId,newName);
+        i_hungry.ArrayLists arList=new ArrayLists();
+        arList.addLastCustomer(newCustomer);
+        System.out.println(ArrayLists.customerList.length);
+        System.out.println(ArrayLists.customerList[0].getCustomerId());
+        System.out.println(ArrayLists.customerList[0].getCustomerName());
+
     }//GEN-LAST:event_btnAddCustomerActionPerformed
 
     /**
