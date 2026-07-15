@@ -92,7 +92,7 @@
         <Component class="javax.swing.JButton" name="btnAddCustomers">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="66" red="ff" type="rgb"/>
+              <Color blue="0" green="0" red="cc" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -105,21 +105,39 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnPlaceOrder">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Place Order"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPlaceOrderActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSearch">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnViewOrders">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="View Orders"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnUpdateOrderDetails">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Update Order Details"/>
           </Properties>
           <Events>
@@ -128,6 +146,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnExit">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
         </Component>

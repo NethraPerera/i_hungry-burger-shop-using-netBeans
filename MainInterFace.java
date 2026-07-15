@@ -40,7 +40,7 @@ public class MainInterFace extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("I Hungry Burgers");
 
-        btnAddCustomers.setBackground(new java.awt.Color(255, 102, 0));
+        btnAddCustomers.setBackground(new java.awt.Color(204, 0, 0));
         btnAddCustomers.setForeground(new java.awt.Color(255, 255, 255));
         btnAddCustomers.setText("Add Customers");
         btnAddCustomers.addActionListener(new java.awt.event.ActionListener() {
@@ -49,12 +49,22 @@ public class MainInterFace extends javax.swing.JFrame {
             }
         });
 
+        btnPlaceOrder.setBackground(new java.awt.Color(204, 0, 0));
+        btnPlaceOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnPlaceOrder.setText("Place Order");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlaceOrderActionPerformed(evt);
+            }
+        });
 
+        btnSearch.setBackground(new java.awt.Color(204, 0, 0));
         btnSearch.setText("Search");
 
+        btnViewOrders.setBackground(new java.awt.Color(204, 0, 0));
         btnViewOrders.setText("View Orders");
 
+        btnUpdateOrderDetails.setBackground(new java.awt.Color(204, 0, 0));
         btnUpdateOrderDetails.setText("Update Order Details");
         btnUpdateOrderDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +72,7 @@ public class MainInterFace extends javax.swing.JFrame {
             }
         });
 
+        btnExit.setBackground(new java.awt.Color(204, 0, 0));
         btnExit.setText("Exit");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -124,6 +135,14 @@ public class MainInterFace extends javax.swing.JFrame {
     private void btnAddCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomersActionPerformed
         new AddCustomer().setVisible(true);
     }//GEN-LAST:event_btnAddCustomersActionPerformed
+
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
+        new PlaceOrder().setVisible(true);
+        
+        
+        //btnPlaceOrderActionPerformed        
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
     /**
      * @param args the command line arguments
