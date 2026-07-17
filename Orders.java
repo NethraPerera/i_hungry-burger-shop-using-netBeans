@@ -42,4 +42,7 @@ class Orders {
     public double getNetTotal() {
         return this.netTotal;
     }
+    public boolean equals(String id){
+        return this.getOrderId().equals(id);
+    }
 }

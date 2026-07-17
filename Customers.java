@@ -51,4 +51,7 @@ public class Customers {
     public double getTotalPrice(){
         return this.totalPrice;
     }
+    public boolean equals(String id){
+        return this.getCustomerId().equals(id);
+    }
 }

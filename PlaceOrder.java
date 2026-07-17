@@ -15,8 +15,22 @@ public class PlaceOrder extends javax.swing.JFrame {
     /**
      * Creates new form PlaceOrder
      */
+    String orderID;
+    String customerID;
+    String status;
+    int QTY;
+    double netTotal;
+    
     public PlaceOrder() {
         initComponents();
+        // -------------- [1.1] Create OrderID --------------
+        ArrayLists.currentOrderID += 1;
+        orderID=String.format("O%04d", ArrayLists.currentOrderID);
+	jlblRealOrderID.setText(orderID);
+        
+        jlblRealStatus.setText("PREPARING...");
+        status=jlblRealStatus.getText();
+        
     }
 
     /**
@@ -82,13 +96,30 @@ public class PlaceOrder extends javax.swing.JFrame {
 
         jlblStatus.setText("Order Status :");
 
+        jtxtCustomerID.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtxtCustomerIDFocusLost(evt);
+            }
+        });
         jtxtCustomerID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtCustomerIDActionPerformed(evt);
             }
         });
 
+        jlblRealOrderID.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
         jlblRealOrderID.setText("jLabel5");
+
+        jtxtQTY.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtxtQTYFocusLost(evt);
+            }
+        });
+        jtxtQTY.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtQTYActionPerformed(evt);
+            }
+        });
 
         jlblRealStatus.setText("jLabel6");
 
@@ -165,6 +196,11 @@ public class PlaceOrder extends javax.swing.JFrame {
         jbtnPlaceOrder.setBackground(new java.awt.Color(0, 153, 51));
         jbtnPlaceOrder.setForeground(new java.awt.Color(255, 255, 255));
         jbtnPlaceOrder.setText("Place Order");
+        jbtnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnPlaceOrderActionPerformed(evt);
+            }
+        });
 
         jbtnHomePage.setBackground(new java.awt.Color(153, 0, 0));
         jbtnHomePage.setForeground(new java.awt.Color(255, 255, 255));
@@ -184,7 +220,7 @@ public class PlaceOrder extends javax.swing.JFrame {
 
         jlblRealNetTotal.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jlblRealNetTotal.setForeground(new java.awt.Color(153, 0, 0));
-        jlblRealNetTotal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jlblRealNetTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblRealNetTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -229,8 +265,7 @@ public class PlaceOrder extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(22, 22, 22))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,8 +285,58 @@ public class PlaceOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnHomePageActionPerformed
 
     private void jtxtCustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCustomerIDActionPerformed
+        
+
+        //--------------------------------------------------------------------------------
+        customerID=jtxtCustomerID.getText();
+        ArrayLists.NodeCustomers tempCustomerList=ArrayLists.firstCustomer;
+        while (tempCustomerList != null) {            
+            if (tempCustomerList.customer.equals(customerID)) {
+                break;
+            }
+            tempCustomerList=tempCustomerList.next;
+        }
+        if (tempCustomerList==null) {
+            
+        }
+        System.out.println("customer id:    "+customerID);
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtCustomerIDActionPerformed
+
+    private void jtxtQTYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtQTYActionPerformed
+        // TODO add your handling code here:
+        QTY=Integer.parseInt(jtxtQTY.getText());
+        System.out.println("QTY:    "+QTY);
+        jlblRealNetTotal.setText(""+(QTY*500));
+        netTotal=Double.parseDouble(jlblRealNetTotal.getText());
+    }//GEN-LAST:event_jtxtQTYActionPerformed
+
+    private void jtxtCustomerIDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtCustomerIDFocusLost
+        // TODO add your handling code here:
+        
+        //--------------------------------------------------------------------------------
+        
+        
+        customerID=jtxtCustomerID.getText();
+        System.out.println("customer id focus lost:    "+customerID);
+    }//GEN-LAST:event_jtxtCustomerIDFocusLost
+
+    private void jtxtQTYFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtQTYFocusLost
+        // TODO add your handling code here:
+        QTY=Integer.parseInt(jtxtQTY.getText());
+        System.out.println("QTY focus lost:    "+QTY);
+        jlblRealNetTotal.setText(""+(QTY*500));
+        netTotal=Double.parseDouble(jlblRealNetTotal.getText());
+    }//GEN-LAST:event_jtxtQTYFocusLost
+
+    private void jbtnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlaceOrderActionPerformed
+        // TODO add your handling code here:
+        Orders order=new Orders(orderID,QTY,status,netTotal);
+        System.out.println(order.getOrderId()+" "+order.getQTY()+" "+order.getNetTotal()+" "+order.getStatus());
+        ArrayLists arrayList=new ArrayLists();
+        arrayList.addLast(order);
+        System.out.println(arrayList.firstOder.order.getOrderId());
+    }//GEN-LAST:event_jbtnPlaceOrderActionPerformed
 
     /**
      * @param args the command line arguments
